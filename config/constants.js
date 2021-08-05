@@ -1,0 +1,1 @@
+export const SERVER_NAME = process.env.REACT_APP_CLIENT_NAME;
