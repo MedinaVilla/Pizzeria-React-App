@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import styles from "./menuItem.module.css";
 
 const MenuItem = ({ item }) => {
+
     return (
         <div className={styles.card}>
             <p>{item.name}</p>

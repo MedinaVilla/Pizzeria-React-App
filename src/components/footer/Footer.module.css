@@ -21,12 +21,14 @@ ul{
    padding: 0 15px;
 }
 .footer_col h4{
-	font-size: 16px;
+	font-size: 18px;
 	color: #ffffff;
 	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
+	margin-bottom: 25px;
+	margin-top: 10px;
 	position: relative;
+	color: #e41937;
+	font-weight: bolder;
 }
 
 .footer_col ul li:not(:last-child){
@@ -45,23 +47,39 @@ ul{
 	color: #ffffff;
 	padding-left: 8px;
 }
-.footer_col .social_links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
+.footer_col .social_links{
+	display: flex;
+	justify-content: space-between;
+
+}
+.footer_col .social_links img{
+	width: 30px;
+	height: 30px;
+	transition: transform .2s;
+}
+.footer_col .social_links img:hover{
+	cursor: pointer;
+	transform: scale(1.1);
 }
 .footer_col .social_links a:hover{
 	color: #24262b;
 	background-color: #ffffff;
 }
 
+.footer_bottom{
+	margin-top: 30px;
+
+}
+.footer_bottom a{
+	font-size: 18px;
+	font-weight: bold;
+	color: #2ea761;;
+}
+.footer_bottom a{
+	font-size: 14px;
+	font-weight: bold;
+	color: #2ea761;;
+}
 /*responsive*/
 @media(max-width: 767px){
   .footer_col{

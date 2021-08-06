@@ -11,6 +11,7 @@
     "react-hot-toast": "^2.1.0",
     "react-responsive-carousel": "^3.2.20",
     "react-scripts": "4.0.1",
+    "sweetalert2": "^11.1.2",
     "web-vitals": "^0.2.4",
     "wouter": "^2.7.4"
   },

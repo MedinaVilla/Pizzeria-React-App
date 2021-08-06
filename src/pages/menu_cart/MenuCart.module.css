@@ -13,28 +13,6 @@
 }
 .container hr{
     border-color: #006491;
+    background-color: #006491;
 }
-.bottomFlex{
-    margin-top: 10px;
-    display: flex;
-    color: #0b506f;
-    justify-content: space-between;
-}
-.bottomFlex button{
-    padding: 9px 30px;
-    background-color:#2ea761;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease 0s;
-}
-.bottomFlex button:hover{
-    border: none;
-    background-color:#2ea761;
-    color: white;
-}
-.link{
-    color: #38c172;
-    font-weight: bold;
-}
+

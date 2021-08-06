@@ -1,38 +1,104 @@
 import React, { Fragment, useState } from 'react';
 import styles from "./ItemToAdd.module.css";
 import pizza from "./../../../assets/images/pizza1.png";
+import Swal from 'sweetalert2'
 import { Link } from 'wouter';
 
 const ItemToAdd = ({ item }) => {
     const [masaCatalog] = useState(["Masa Original", "Masa Sartén", "Masa Orilla Rellena de Queso", "Masa Crunchy"])
     const [sizeCatalog] = useState(["Mediana 30 cm", "Grande 35 cm", "Dominator 45 cm"])
+    const [mitadIzquierdaCatalog] = useState(["Extravaganzza", "Deluxe", "Hawaina", "Honolulu", "Chicken Hawaina", "Pepperoni Especial", "Mexicana", "Carnes Frías", "Cuatro Quesos", "Veggie"])
+    const [mitadDerechaCatalog] = useState(["Extravaganzza", "Deluxe", "Hawaina", "Honolulu", "Chicken Hawaina", "Pepperoni Especial", "Mexicana", "Carnes Frías", "Cuatro Quesos", "Veggie"])
 
-    // const [masaSelected] = useState();
+    const [mitadIzqSelected, setMitadIzq] = useState(item.name);
+    const [mitadDerSelected, setMitadDer] = useState(item.name);
+    const [masaSelected, setMasaSelected] = useState();
+    const [sizeSelected, setSizeSelected] = useState();
+    const [quantity, setQuantity] = useState(1);
+
+    const addToCart = () => {
+        Swal.fire('Agregado al carrito', 'Puedes continuar agregando productos', 'success');
+        const pizza = {
+            name: item.name,
+            image: "http://localhost:3000/static/media/pizza1.d147f49c.png",
+            masa: masaSelected,
+            size: sizeSelected,
+            mitadIzquierda: mitadIzqSelected,
+            mitadDerecha: mitadDerSelected,
+            quantity: quantity
+        }
+
+        let storage = JSON.parse(localStorage.getItem("cart"));
+        if (storage == null) {
+            storage = [];
+        }
+        storage.push(pizza);
+        localStorage.setItem("cart", JSON.stringify(storage));
+    }
 
     return (
-        <div className={styles.wrapper_grid}>
-            <div className={styles.container}>
-                <img className={styles.image} src={pizza} alt="image1"></img>
+        <div>
+            <div className={styles.wrapper_grid}>
+                <div alignt="center" className={styles.container}>
+                    <img className={styles.image} src={pizza} alt="image1"></img>
+                </div>
+                <div className={styles.container}>
+                    <p className={styles.tab}>MASA</p>
+                    <ul className={styles.list}>
+                        {
+                            masaCatalog.map((masa, index) => {
+                                return <Fragment key={index}><li className={masaSelected === masa ? styles.link_active : ""} onClick={() => { setMasaSelected(masa) }}> {masa}</li></Fragment>
+                            })
+                        }
+                    </ul>
+                </div>
+                <div className={styles.container}>
+                    <p className={styles.tab}>TAMAÑO</p>
+                    <ul className={styles.list}>
+                        {
+                            sizeCatalog.map((size, index) => {
+                                return <Fragment key={index}><li className={sizeSelected === size ? styles.link_active : ""} onClick={() => { setSizeSelected(size) }}> {size}</li></Fragment>
+                            })
+                        }
+                    </ul>
+                </div>
             </div>
-            <div className={styles.container}>
-                <p className={styles.tab}>MASA</p>
-                <ul className={styles.list}>
-                    {
-                        masaCatalog.map((masa,index) => {
-                            return <Fragment key={index}><Link href="xd"><li> {masa}</li></Link></Fragment>
-                        })
-                    }
-                </ul>
-            </div>
-            <div  className={styles.container}>
-            <p className={styles.tab}>TAMAÑO</p>
-               <ul className={styles.list}>
-                    {
-                        sizeCatalog.map((size,index) => {
-                            return <Fragment key={index}><Link href="xd"><li> {size}</li></Link></Fragment>
-                        })
-                    }
-                </ul>
+            <hr />
+            <div className={styles.bottomFlex}>
+                <div>
+                    <h3>CANTIDAD</h3>
+                    <input onChange={(e) => setQuantity(e.target.value)} className={styles.inputNumber} defaultValue={1} type="number" />
+                </div>
+                <div>
+                    <h3>MITAD Y MITAD</h3>
+                    <div className={styles.bottomFlex}>
+                        <div >
+                            <h4>Mitad izquierda</h4>
+                            <select onChange={(e) => setMitadIzq(e.target.value)} className={styles.select} defaultValue={item.name}>
+                                {mitadIzquierdaCatalog.map((mitadIzquierda, index) => {
+                                    return <option key={`option-${index}`} value={mitadIzquierda}>{mitadIzquierda}</option>
+                                })}
+                            </select>
+                        </div>
+                        <div>
+                            <h4>Mitad Derecha</h4>
+                            <select onChange={(e) => setMitadDer(e.target.value)} className={styles.select} defaultValue={item.name}>
+                                {mitadDerechaCatalog.map((mitadDerecha, index) => {
+                                    return <option key={`option-${index}`} value={mitadDerecha}>{mitadDerecha}</option>
+                                })}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div> <br />
+            <hr />
+            <div className={styles.bottomFlex}>
+                <div>
+                    <small>¿Quieres cambiar algún ingrediente? Utiliza nuestro <Link href="#"><span className={styles.link}>Domino´s Chef</span></Link></small>
+                </div>
+                <div>
+                    <button onClick={() => { addToCart() }}>Agregar al carrito</button>
+                </div>
             </div>
         </div>
     );

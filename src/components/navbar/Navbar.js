@@ -19,7 +19,7 @@ const Navbar = () => {
                     <li><Link href="/"><img src={item2} alt="logo" /><br />Arma tu pizza</Link></li>
                     <li><Link href="/"><img src={item3} alt="logo" /><br />Promociones</Link></li>
                     <li><Link href="/"><img src={item4} alt="logo" /><br />Adicionales</Link></li>
-                    <li><Link href="/"><img src={item5} alt="logo" /><br />Mi orden</Link></li>
+                    <li><Link href="/carrito"><img src={item5} alt="logo" /><br />Mi orden</Link></li>
                 </ul>
             </nav>
             <Link href="#"><button className={styles.button}>Iniciar Sesión</button></Link>

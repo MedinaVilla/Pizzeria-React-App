@@ -7,7 +7,7 @@ import "./index.css";
 const Main = lazy(() => import('./pages/main/main'));
 const MenuCart = lazy(() => import('./pages/menu_cart/MenuCart'));
 const NotFound = lazy(() => import('./pages/not_found/not_found'));
-
+const Cart = lazy(()=> import('./pages/cart/Cart'));
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Switch>
           <Route path='/' component={Main} />
           <Route path='/menu/ordenar_especialidad/:id' component={MenuCart} />
+          <Route path='/carrito' component={Cart} />
           <Route path='/404' component={NotFound} />
           <Redirect to='/404' />
         </Switch>
