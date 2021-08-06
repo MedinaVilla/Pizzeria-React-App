@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Switch, Redirect } from "wouter";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
+import "./index.css";
 
 const Main = lazy(() => import('./pages/main/main'));
 const NotFound = lazy(() => import('./pages/not_found/not_found'));

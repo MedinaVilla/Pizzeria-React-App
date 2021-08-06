@@ -1,0 +1,42 @@
+.nav{
+    background-color: #006491 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 1.5%;  
+}
+
+li,a,button{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0% 20px;
+}
+.nav_links a{
+    transition: all 0.3s ease 0s;
+}
+.nav_links a:hover{
+    background-color:#08415b;
+
+}
+button{
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button:hover{
+    background-color: rgb(8, 91, 111);
+}
+
+.logo{
+    width: 150px;
+    cursor: pointer;
+    margin-right: auto;
+}
