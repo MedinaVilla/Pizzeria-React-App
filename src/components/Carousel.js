@@ -6,13 +6,13 @@ const CarouselImage = ({ images }) => {
     return (
         <Carousel
             autoPlay
-            infiniteLoop={true}
+            infiniteLoop
             showThumbs={false}
             showStatus={false}
         >
             {images.map((image, index) => {
                 return (
-                    <div>
+                    <div key={`image-${index}`}>
                         <img src={image} alt={index} />
                     </div>
                 )

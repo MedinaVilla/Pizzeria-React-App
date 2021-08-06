@@ -1,0 +1,14 @@
+.wrapper_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    justify-content: center;
+  }
+  
+  .container {
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    margin: 0.5rem;
+  }
+

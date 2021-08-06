@@ -1,0 +1,46 @@
+.card{
+}
+
+.card p{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    padding: 10px;
+    white-space: nowrap;
+    background-color: rgba(0,136,169,1);
+    color: white;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.image{
+    height: 200px;
+}
+
+.containerButton{
+    display: flex;
+    justify-content:center;
+    margin-top: -5px;
+}
+.containerButton button{
+    background-color: white;
+    padding: 17px;
+    border-radius: 0;
+    font-size: 14px;
+    color: gray;
+    border: 1px solid rgb(225, 217, 217);
+    font-weight: bold;
+}
+.containerButton button:nth-child(1){
+    color: gray;
+}
+.containerButton button:nth-child(1):hover{
+    color: white;
+    background-color:rgba(0,136,169,1);
+}
+.containerButton button:nth-child(2){
+    color: green;
+}
+.containerButton button:nth-child(2):hover{
+    color: white;
+    background-color: green;
+}
