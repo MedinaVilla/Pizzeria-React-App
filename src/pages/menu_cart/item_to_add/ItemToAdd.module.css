@@ -1,0 +1,35 @@
+.wrapper_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    justify-content: center;
+    color: #0b506f;
+  }
+  
+  .container {
+    overflow: hidden;
+    background-color: white;
+    text-align:left;
+    position: relative;
+    margin: 0.5rem;
+    padding-top: 20px;
+
+  }
+
+  .image {
+    width: 80%;
+    height: auto;
+  }
+  .tab{
+      font-weight: bold;
+  }
+
+  .list li{
+    padding: 6px 6px;
+    border: 1px solid #006491;
+    margin-bottom: 2px;
+    font-size: 15px;
+  }
+  .list li:hover{
+    background-color:rgb(250, 248, 248);
+    cursor: pointer;
+  }

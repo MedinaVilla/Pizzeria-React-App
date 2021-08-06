@@ -34,6 +34,7 @@
     color: gray;
 }
 .containerButton button:nth-child(1):hover{
+    cursor: pointer;
     color: white;
     background-color:rgba(0,136,169,1);
 }
@@ -41,6 +42,7 @@
     color: green;
 }
 .containerButton button:nth-child(2):hover{
+    cursor: pointer;
     color: white;
     background-color: green;
 }

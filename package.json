@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hot-toast": "^2.1.0",
     "react-responsive-carousel": "^3.2.20",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4",
@@ -31,7 +32,11 @@
       "not dead",
       "not op_mini all"
     ],
-    "development": [">0.3%", "not ie 11", "not dead", "not op_mini all"]
-
+    "development": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all"
+    ]
   }
 }

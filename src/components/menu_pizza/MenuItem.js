@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'wouter';
 import styles from "./menuItem.module.css";
 
 const MenuItem = ({ item }) => {
@@ -7,8 +8,8 @@ const MenuItem = ({ item }) => {
             <p>{item.name}</p>
             <img className={styles.image} src={item.image} alt="image1" />
             <div className={styles.containerButton}>
-                <button onClick={()=>{}}>DETALLES</button>
-                <button onClick={()=>{}}>ORDENAR AQUÍ</button>
+                <Link href="menu/ordenar_especialidad/peperonni"><button onClick={()=>{}}>DETALLES</button></Link>
+                <Link href="menu/ordenar_especialidad/peperonni"><button onClick={()=>{}}>ORDENAR AQUÍ</button></Link>
             </div>
 
         </div>

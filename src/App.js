@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import "./index.css";
 
 const Main = lazy(() => import('./pages/main/main'));
+const MenuCart = lazy(() => import('./pages/menu_cart/MenuCart'));
 const NotFound = lazy(() => import('./pages/not_found/not_found'));
 
 
@@ -15,6 +16,7 @@ function App() {
       <Suspense fallback={<div />}>
         <Switch>
           <Route path='/' component={Main} />
+          <Route path='/menu/ordenar_especialidad/:id' component={MenuCart} />
           <Route path='/404' component={NotFound} />
           <Redirect to='/404' />
         </Switch>
