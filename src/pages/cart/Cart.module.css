@@ -1,8 +1,10 @@
 .cartView{
     margin: 15px 0;
-    border: 1px solid black;
     padding: 20px;
     color: rgb(110, 108, 108);
+	-webkit-box-shadow: 0 0 6px 4px rgb(213, 213, 213);
+   	-moz-box-shadow: 0 0 6px 4px rgb(213, 213, 213);
+	box-shadow: 0 0 6px 4px rgb(213, 213, 213);
 }
 .subtitle{
     margin-top: 10px;
@@ -11,6 +13,9 @@
 
 .container{
     padding: 0 0;
+}
+.row > div{
+	padding: 10px 15px; 
 }
 .row {
 	--bs-gutter-x: 1.5rem;
@@ -30,10 +35,65 @@
 	padding-left: calc(var(--bs-gutter-x) * .5);
 	margin-top: var(--bs-gutter-y)
 }
+.close_button{
+	cursor: pointer;
+	font-weight: bold;
+}
+.hr{
+	border: 0.2px solid rgb(235, 235, 235) ;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: rgb(235, 235, 235);
+}
+
+.checkout{
+	background-color: rgb(240, 239, 239) ;
+	text-align: right;
+	padding: 10px 30px;
+}
+
+.envio{
+	margin-left: 14px;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+.total{
+	margin-left: 20px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.button_group{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content:flex-end;
+}
+.button_group button{
+	padding: 9px 50px;
+	color: white;
+    border: none;
+	font-weight: bold;
+	font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-left: 50px;
+}
+.button_group button:nth-child(1){
+	background-color: red;
+}
+.button_group button:nth-child(2){
+	background-color: #006491;
+}
+.button_group button:nth-child(3){
+	background-color: #2ea761;
+}
 
 @media (min-width:768px) {
     .container{
-        padding: 0 10%;
+        padding: 0 15%;
     }
 	.col_md_1 {
 		flex: 0 0 auto;

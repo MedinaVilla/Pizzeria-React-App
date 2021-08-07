@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styles from "./ItemToAdd.module.css";
 import pizza from "./../../../assets/images/pizza1.png";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { Link } from 'wouter';
 
 const ItemToAdd = ({ item }) => {
@@ -19,13 +19,17 @@ const ItemToAdd = ({ item }) => {
     const addToCart = () => {
         Swal.fire('Agregado al carrito', 'Puedes continuar agregando productos', 'success');
         const pizza = {
+            id: item.id,
             name: item.name,
+            description: item.description,
+            ingredients: item.ingredients,
             image: "http://localhost:3000/static/media/pizza1.d147f49c.png",
             masa: masaSelected,
             size: sizeSelected,
             mitadIzquierda: mitadIzqSelected,
             mitadDerecha: mitadDerSelected,
-            quantity: quantity
+            quantity: quantity,
+            price: Math.floor(Math.random() * 600) + 1
         }
 
         let storage = JSON.parse(localStorage.getItem("cart"));
@@ -34,6 +38,7 @@ const ItemToAdd = ({ item }) => {
         }
         storage.push(pizza);
         localStorage.setItem("cart", JSON.stringify(storage));
+        localStorage.removeItem("to_buy");
     }
 
     return (

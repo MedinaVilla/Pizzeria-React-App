@@ -53,8 +53,8 @@ ul{
 
 }
 .footer_col .social_links img{
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 	transition: transform .2s;
 }
 .footer_col .social_links img:hover{
