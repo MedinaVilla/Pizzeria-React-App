@@ -1,0 +1,30 @@
+.container{
+    padding: 0 15%;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+}
+.tab{
+    background-color: white;
+    cursor: pointer;
+    color: #006491;
+    border: 1px solid rgb(225, 217, 217);
+    padding: 10px 60px;
+}
+.tab_active{
+    background-color: #006491;
+    border: 1px solid rgb(225, 217, 217);
+    padding: 10px 60px;
+    cursor: pointer;
+    color: white;
+}
+.image{
+    width: 100%;
+}
+.description_box{
+    background-color: rgb(142, 141, 141);
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
