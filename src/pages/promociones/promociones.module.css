@@ -3,3 +3,42 @@
     color: rgb(226, 13, 13);
     text-align: center;
 }
+.subtitle{
+    font-size: 20px;
+    color: #006491;
+    font-weight: normal;
+}
+
+.container{
+    padding: 0 10%;
+
+}
+
+.search_cupon{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.search_cupon input{
+    border: 1px solid rgb(230, 230, 230);
+    width: 200px;
+    border-radius: 3px;
+    margin-right: 50px;
+    padding: 5px;
+    font-size: 11px;
+}
+.search_cupon input:focus{
+    border: 1px solid #006491;
+    outline:none;
+}
+.search_cupon button{
+    border: none;
+    background-color: #02ba38;
+    padding: 5px 20px;
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 3px;
+    color: white;
+
+}

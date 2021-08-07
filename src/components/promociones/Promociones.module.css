@@ -1,0 +1,29 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+}
+
+.container div{
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    margin: 0.5rem;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+  .description{
+      font-size: 11px;
+      overflow: hidden;
+  }
