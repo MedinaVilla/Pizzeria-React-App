@@ -6,46 +6,46 @@ import styles from "./promociones.module.css";
 
 const Promociones = () => {
     const [promocionesFCatalog] = useState([{
-        id: 1,
+        id: "promF1",
         name: "DOMINOSMANIA",
-        image:prom1,
+        image: prom1,
         description: "2 Pizzas Grandes, Masa Original de 1 Ingrediente por $199"
     },
     {
-        id: 2,
+        id: "promF2",
         name: "MEDIANA $99",
-        image:prom1,
+        image: prom1,
         description: "Pizza Mediana, Masa Original, hasta con 4 Ingredientes"
     },
     {
-        id: 3,
+        id: "promF3",
         name: "2 X $89 ADICIONAL + REFRESCOS",
-        image:prom1,
+        image: prom1,
         description: "1 Adicional a elegir (Papotas, Canela Baitz, Cajeta Baitz, Cheesy Bread y Cheesy Bread Jalapeño) + Refresco de 1.5Lts + Refresco de 600ml/Agua Natural"
     },
     {
-        id: 3,
+        id: "promF4",
         name: "GRANDE $120",
-        image:prom1,
+        image: prom1,
         description: "3 Adicionales a elegir. 1 pizza Grande de especialidad"
     }
     ])
     const [promociones6Catalog] = useState([{
-        id: 1,
+        id: "promSix1",
         name: "CERO CONTACTO",
-        image:prom1,
+        image: prom1,
         description: "Para salvaguardar tu integridad y bienestar, conoce nuestra forma de reparto sin contacto."
     },
     {
-        id: 2,
+        id: "promSix2",
         name: "ORIGINAL GRANDE + PAPOTAS",
-        image:prom1,
+        image: prom1,
         description: "Pizza Grande, Masa Original, 2 a 4 Ingredientes + Papotas por $219"
     },
     {
-        id: 3,
+        id: "promSix3",
         name: "ORIGINAL GRANDE + BONELESS",
-        image:prom1,
+        image: prom1,
         description: "Pizza Grande, Masa Original,1 Ingrediente + 2 Boneless por $329"
     }])
 
@@ -65,7 +65,7 @@ const Promociones = () => {
             <br />
             <h3 className={styles.subtitle}>HASTA 4 PERSONAS</h3>
             <hr />
-            <PromocionesBox promociones={promociones6Catalog}/>
+            <PromocionesBox promociones={promociones6Catalog} />
             <br />
             <h3 className={styles.subtitle}>HASTA 6 PERSONAS</h3>
             <hr />

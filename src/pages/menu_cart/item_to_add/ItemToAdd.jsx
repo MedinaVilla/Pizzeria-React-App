@@ -7,17 +7,17 @@ import { Link } from 'wouter';
 const ItemToAdd = ({ item }) => {
     const [masaCatalog] = useState(["Masa Original", "Masa Sartén", "Masa Orilla Rellena de Queso", "Masa Crunchy"])
     const [sizeCatalog] = useState(["Mediana 30 cm", "Grande 35 cm", "Dominator 45 cm"])
-    const [mitadIzquierdaCatalog] = useState(["Extravaganzza", "Deluxe", "Hawaina", "Honolulu", "Chicken Hawaina", "Pepperoni Especial", "Mexicana", "Carnes Frías", "Cuatro Quesos", "Veggie"])
-    const [mitadDerechaCatalog] = useState(["Extravaganzza", "Deluxe", "Hawaina", "Honolulu", "Chicken Hawaina", "Pepperoni Especial", "Mexicana", "Carnes Frías", "Cuatro Quesos", "Veggie"])
+    const [mitadIzquierdaCatalog] = useState(["EXTRAVAGANZZA", "DELUXE", "HAWAIANA", "HONOLULU", "CHICKEN HAWAIANA", "PEPPERONI ESPECIAL", "MEXICANA", "CARNES FRIAS", "CUATRO QUESOS", "VEGGIE"])
+    const [mitadDerechaCatalog] = useState(["EXTRAVAGANZZA", "DELUXE", "HAWAIANA", "HONOLULU", "CHICKEN HAWAIANA", "PEPPERONI ESPECIAL", "MEXICANA", "CARNES FRIAS", "CUATRO QUESOS", "VEGGIE"])
 
     const [mitadIzqSelected, setMitadIzq] = useState(item.name);
     const [mitadDerSelected, setMitadDer] = useState(item.name);
-    const [masaSelected, setMasaSelected] = useState();
-    const [sizeSelected, setSizeSelected] = useState();
+    const [masaSelected, setMasaSelected] = useState(masaCatalog[0]);
+    const [sizeSelected, setSizeSelected] = useState(sizeCatalog[0]);
     const [quantity, setQuantity] = useState(1);
 
     const addToCart = () => {
-        Swal.fire('Agregado al carrito', 'Puedes continuar agregando productos', 'success');
+
         const pizza = {
             id: item.id,
             name: item.name,
@@ -39,6 +39,7 @@ const ItemToAdd = ({ item }) => {
         storage.push(pizza);
         localStorage.setItem("cart", JSON.stringify(storage));
         localStorage.removeItem("to_buy");
+        Swal.fire('Agregado al carrito', 'Puedes continuar agregando productos', 'success');
     }
 
     return (

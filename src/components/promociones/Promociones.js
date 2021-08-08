@@ -9,7 +9,7 @@ const Promociones = ({ promociones=[] }) => {
         <div>
             <div className={styles.container}>
                 {promociones.length > 0 ? promociones.map((prom, index) => {
-                    return <Link href={`${location}/${prom.id}`}><div key={`prom-${index}`} className={styles.row}>
+                    return <Link key={`prom-${index}`} href={`${location}/${prom.id}`}><div className={styles.row}>
                         <div className={styles.column}>
                             <img src={prom.image} alt="prom" />
                         </div>

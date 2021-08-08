@@ -1,0 +1,34 @@
+.container{
+    padding: 0 10%;
+    margin-top: 20px;
+}
+
+.wrapper{
+    border: 1px solid #006491;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding-bottom: 20px;
+}
+.button_group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+.button_group button{
+   width: 33.55%;
+   background-color: #006491;
+   padding: 10px;
+   border: none;
+}
+.button_group button:nth-child(1){
+    border-top-left-radius: 2px;
+ }
+ .button_group button:nth-child(3){
+    border-top-right-radius: 2px;
+ }
+
+ .tab_active{
+    background-color: white !important;
+    color: #006491 !important;
+ }

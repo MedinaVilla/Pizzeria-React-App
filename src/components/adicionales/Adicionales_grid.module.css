@@ -1,0 +1,38 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+}
+.container{
+    padding: 0 10%;
+    margin-top: 20px;
+}
+
+.title_card{
+    background-color: #006491;
+    color: white;
+    padding: 10px;
+}
+.image_card{
+   width:70%;
+}
+.description_box{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 20px;
+   padding: 0 10%;
+   font-weight: bold;
+   color: rgb(61, 60, 60);
+
+}
+.inputNumber{
+   border: 0.5px solid #cecece;
+   width: 50px;
+   height: 40px;
+ }
+ .inputNumber:focus{
+   outline: none;
+   width: 50px;
+   height: 40px;
+ }

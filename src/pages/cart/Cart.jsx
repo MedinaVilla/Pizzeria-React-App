@@ -8,15 +8,26 @@ const notifyDeleteElementCart = () => toast.success('El producto se ha eliminado
 const notifyEmptyCart = () => toast.success('Tu carrito se ha vaciado extisoamente');
 
 const Cart = () => {
+    
     //Cart from localStorage. Meanwhile find a mechanism to control Global State
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : []);
     const [total] = useState(974);
 
     const deleteFromCart = (id) => {
-        setCart(cart.filter(function (item) { return item.name !== id }));
+        setCart(cart.filter(function (item) { return item.id !== id }));
+        let storage = JSON.parse(localStorage.getItem("cart"));
+        if (storage == null) {
+            storage = [];
+        }
+        let sameArticleCart = storage.findIndex((element) => (element.id === id));
+        if (sameArticleCart !== -1) {
+            storage.splice(sameArticleCart, 1);
+            localStorage.setItem("cart", JSON.stringify(storage));
+        } else console.log("ERROR")
+
         notifyDeleteElementCart();
     }
-    const setCartEmpty = () =>{
+    const setCartEmpty = () => {
         Swal.fire({
             title: '¿Estás seguro de vaciar tu carrito?',
             text: 'Se eliminarán todos tus productos que tienes antes de proceder al pago',
@@ -24,13 +35,13 @@ const Cart = () => {
             showCancelButton: true,
             confirmButtonText: 'Si, vaciar',
             cancelButtonText: 'No, regresar'
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
+                setCart([]);
+                localStorage.removeItem("cart");
                 notifyEmptyCart();
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-              
-            }
-          })
+            } 
+        })
     }
 
     return (
@@ -60,7 +71,7 @@ const Cart = () => {
                             <img style={{ width: "100%" }} src={item.image} alt={`images-${index}`}></img>
                         </div>
                         <div className={styles.col_md_6}>
-                            <strong>{item.size},{item.mitadIzquierda},{item.masa}/{item.mitadDerecha} {item.size},{item.masa}</strong>
+                            {item.presentation ? <><p><strong>{item.name} {item.presentation}</strong></p><p>{item.description}</p></> : <strong>{item.size},{item.mitadIzquierda},{item.masa}/{item.mitadDerecha} {item.size},{item.masa}</strong>}
                         </div>
                         <div className={styles.col_md_2}>
                             <p>{item.quantity}</p>
@@ -69,18 +80,18 @@ const Cart = () => {
                             <strong>${item.price}</strong>
                         </div>
                         <div className={styles.col_md_1}>
-                            <p onClick={() => { deleteFromCart(item.name) }} className={styles.close_button}>x</p>
+                            <p onClick={() => { deleteFromCart(item.id) }} className={styles.close_button}>x</p>
                         </div>
                         <hr className={styles.hr} />
                     </div>
                 })}
                 <div className={styles.checkout}>
                     <p>Costo de envío <span className={styles.envio}>GRATIS</span></p>
-                    <br/>
+                    <br />
                     <p>Total <span className={styles.total}>${total}</span></p>
                 </div>
                 <div className={styles.button_group}>
-                    <button onClick={()=>{setCartEmpty()}}>Vaciar Carrito</button>
+                    <button onClick={() => { setCartEmpty() }}>Vaciar Carrito</button>
                     <Link href="/"><button>Seguir comprando</button></Link>
                     <button>Pagar</button>
                 </div>
