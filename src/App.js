@@ -27,7 +27,7 @@ function App() {
           <Route path='/menu/adicionales' component={Adicionales} />
           <Route path='/menu/arma_tu_pizza' component={ArmaTuPizza} />
           <Route path='/404' component={NotFound} />
-          {/* <Redirect to='/404' /> */}
+          <Redirect to='/404' />
         </Switch>
       </Suspense>
       <Footer />

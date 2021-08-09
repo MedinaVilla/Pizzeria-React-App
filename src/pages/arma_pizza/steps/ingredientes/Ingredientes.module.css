@@ -1,0 +1,22 @@
+.wrapper_flex{
+    display: flex;
+    color: #006491
+}
+.wrapper_flex img{
+    width: 80%;
+}
+.section_flex {
+    flex: 1; /*grow*/
+    padding: 20px;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 768px) { /*breakpoint*/
+    .wrapper_flex {
+        flex-direction: column;
+    }
+}

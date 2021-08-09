@@ -1,0 +1,14 @@
+.wrapper_flex{
+    display: flex;
+    color: #006491
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10%;
+}
+.li{
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+}
