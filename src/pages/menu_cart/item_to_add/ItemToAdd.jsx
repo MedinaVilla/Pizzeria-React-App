@@ -5,8 +5,8 @@ import Swal from 'sweetalert2';
 import { Link } from 'wouter';
 
 const ItemToAdd = ({ item }) => {
-    const [masaCatalog] = useState(["Masa Original", "Masa Sartén", "Masa Orilla Rellena de Queso", "Masa Crunchy"])
-    const [sizeCatalog] = useState(["Mediana 30 cm", "Grande 35 cm", "Dominator 45 cm"])
+    const [masaCatalog] = useState(["Masa Original", "Masa Sartén", "Masa Orilla Rellena de Queso", "Masa Crunchy"]);
+    const [sizeCatalog] = useState(["Mediana 30 cm", "Grande 35 cm", "Dominator 45 cm"]);
     const [mitadIzquierdaCatalog] = useState(["EXTRAVAGANZZA", "DELUXE", "HAWAIANA", "HONOLULU", "CHICKEN HAWAIANA", "PEPPERONI ESPECIAL", "MEXICANA", "CARNES FRIAS", "CUATRO QUESOS", "VEGGIE"])
     const [mitadDerechaCatalog] = useState(["EXTRAVAGANZZA", "DELUXE", "HAWAIANA", "HONOLULU", "CHICKEN HAWAIANA", "PEPPERONI ESPECIAL", "MEXICANA", "CARNES FRIAS", "CUATRO QUESOS", "VEGGIE"])
 

@@ -26,7 +26,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className={styles.footer_col}>
-                            <h4>Interctúa con nosotros</h4>
+                            <h4>Interactúa con nosotros</h4>
                             <ul>
                                 <li><Link href="#">Comparte tu opinión</Link></li>
                                 <li><Link href="#">Preguntas frecuentes</Link></li>
