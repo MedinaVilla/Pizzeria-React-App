@@ -22,7 +22,7 @@ const SizeMasaStep = ({ formData, setForm, navigation }) => {
                     <ul>
                         {
                             masasCatalog.map((masa, index) => {
-                                return <li key={`item-${index}`} className={styles.li}><input name="masa" id={`option-${index}`} type="radio" value={masa} /> <label for={`menu-${index}`}><strong></strong>{masa}</label><br />
+                                return <li key={`item-${index}`} className={styles.li}><input name="masa" id={`option-${index}`} type="radio" value={masa} /> <label htmlFor={`menu-${index}`}><strong></strong>{masa}</label><br />
                                     <small>{masasDescriptions[index]}</small>
                                 </li>
                             })
@@ -34,7 +34,7 @@ const SizeMasaStep = ({ formData, setForm, navigation }) => {
                     <ul>
                         {
                             sizeCatalog.map((size, index) => {
-                                return <li key={`item-${index}`} className={styles.li}><input name="size" id={`option-${index}`} type="radio" value={size} /> <label for={`menu-${index}`}>{size}</label><br />
+                                return <li key={`item-${index}`} className={styles.li}><input name="size" id={`option-${index}`} type="radio" value={size} /> <label htmlFor={`menu-${index}`}>{size}</label><br />
                                     <small>{sizeDescriptions[index]}</small>
                                 </li>
                             })

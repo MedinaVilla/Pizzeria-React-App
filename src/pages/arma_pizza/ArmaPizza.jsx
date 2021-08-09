@@ -9,10 +9,9 @@ const defaultData = {
     firstName: ""
 };
 
-const steps = ["tamaño_masa", "salsa_queso", "ingredientes"];
+const steps = ["TAMAÑO Y MASA", "SALSA Y QUESO", "INGREDIENTES"];
 
 const ArmaPizza = () => {
-
     const [formData, setForm] = useForm(defaultData);
     const { step, navigation } = useStep({
         steps,
@@ -22,32 +21,28 @@ const ArmaPizza = () => {
 
     const renderStep = () => {
         switch (step) {
-            case "tamaño_masa":
+            case steps[0]:
                 return <SizeMasaStep {...props} />;
-            case "salsa_queso":
+            case steps[1]:
                 return <SalsaQuesoStep {...props} />;
-            case "ingredientes":
+            case steps[2]:
                 return <Ingredientes {...props} />;
             default: return "";
         }
-
-
-
     }
+
     return (
         <div className={styles.container}>
             <div className={styles.box}>
-            <div className={styles.wrapper_flex}>
-                <div className={styles.section_flex}>
-                    <button className={styles.button_active}>TAMAÑO Y MASA</button>
+                <div className={styles.wrapper_flex}>
+                    {
+                        steps.map((s, index) => {
+                            return <div key={`item-${index}`} className={styles.section_flex}>
+                                <button className={step === s ? styles.button_active : styles.arr}>TAMAÑO Y MASA</button>
+                            </div>
+                        })
+                    }
                 </div>
-                <div className={styles.section_flex}>
-                    <button className={styles.arrow_pointer}>SALSA Y QUESO</button>
-                </div>
-                <div className={styles.section_flex}>
-                    <button className={styles.arrow_pointer}>INGREDIENTES</button>
-                </div>
-            </div>
                 {
                     renderStep()
                 }

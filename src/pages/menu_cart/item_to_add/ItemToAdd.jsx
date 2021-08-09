@@ -63,7 +63,7 @@ const ItemToAdd = ({ item }) => {
                     <ul className={styles.list}>
                         {
                             sizeCatalog.map((size, index) => {
-                                return <Fragment key={index}><li className={sizeSelected === size ? styles.link_active : ""} onClick={() => { setSizeSelected(size) }}> {size}</li></Fragment>
+                                return <Fragment key={`size-${index}`}><li className={sizeSelected === size ? styles.link_active : ""} onClick={() => { setSizeSelected(size) }}> {size}</li></Fragment>
                             })
                         }
                     </ul>

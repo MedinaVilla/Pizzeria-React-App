@@ -6,7 +6,7 @@ const Check = ({id}) => {
         <ul className={styles.switches}>
             <li>
                 <input type="checkbox" id={id} />
-                <label for={id}>
+                <label htmlFor={id}>
                     <span>Extra</span>
                     <span></span>
                 </label>

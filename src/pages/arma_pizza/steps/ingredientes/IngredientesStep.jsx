@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import pizza from './../../../../assets/images/pizza1.png'
-
 import styles from './Ingredientes.module.css';
-import IngredienteItem from './ingredienteItem/IngredienteItem';
 import Swal from 'sweetalert2';
+import IngredienteItem from './ingredienteItem/IngredienteItem';
 
 const Ingredientes = ({ formData, setForm, navigation }) => {
     const [ingredients] = useState(["Pepperoni", "Jamón", "Tocino", "Salami"])
@@ -21,8 +20,8 @@ const Ingredientes = ({ formData, setForm, navigation }) => {
                     <div>
                         <ul>
                             {
-                                ingredients.map((ingredient) => {
-                                    return <IngredienteItem ingredient={ingredient} />
+                                ingredients.map((ingredient, index) => {
+                                    return <Fragment key={`ingredient-${index}`}><IngredienteItem ingredient={ingredient} /></Fragment>
                                 })
 
                             }
@@ -33,8 +32,8 @@ const Ingredientes = ({ formData, setForm, navigation }) => {
                     <div>
                         <ul>
                             {
-                                ingredients2.map((ingredient) => {
-                                    return <IngredienteItem ingredient={ingredient} />
+                                ingredients2.map((ingredient,index) => {
+                                    return <Fragment key={`ingredient-${index}`}><IngredienteItem ingredient={ingredient} /></Fragment>
                                 })
 
                             }
