@@ -24,9 +24,9 @@ const ArmaPizza = () => {
     });
 
     useEffect(() => {
-        //Initializing default parameters to ingredients selectes
+        //Initializing default parameters to ingredients checboxes and radios
         for (let i = 0; i < ingredientesCount; i++) {
-            defaultData["ingredient-" + i] = { selected: false, part: 0, extra: false }; // Part 0 = Ambas mitadas, Part 1 = Mitad izquierda, Part 2 = Mitad derecha
+            defaultData["ingredient-" + i] = { selected: false, part: 2, extra: false }; // Part 0 = Ambas mitadas, Part 1 = Mitad izquierda, Part 2 = Mitad derecha
         }
     }, [defaultData])
 

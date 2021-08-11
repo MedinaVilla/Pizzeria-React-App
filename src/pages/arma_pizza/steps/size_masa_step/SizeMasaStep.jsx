@@ -15,6 +15,7 @@ const SizeMasaStep = ({ formData, setForm, navigation }) => {
                 <div className={styles.section_flex}>
                     <div align="center">
                         <img src={pizza} alt="pizza" />
+                        <div>  <input onChange={setForm} className={styles.inputNumber} name="quantity" defaultValue="0" type="number" /></div>
                     </div>
                 </div>
                 <div className={styles.section_flex}>

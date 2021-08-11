@@ -17,8 +17,8 @@ const Masas = () => {
     return (
         <div className={styles.container}>
             <div className={styles.tabs}>
-                {masasCatalog.map((masa) => {
-                    return <button className={masaSelected === masa ? styles.tab_active : styles.tab} onClick={() => { setMasaSelected(masa) }}>{masa}</button>
+                {masasCatalog.map((masa,index) => {
+                    return <button key={`button-${index}`} className={masaSelected === masa ? styles.tab_active : styles.tab} onClick={() => { setMasaSelected(masa) }}>{masa}</button>
                 })}
             </div>
             <div>

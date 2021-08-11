@@ -34,7 +34,7 @@ const SalsaQuesoStep = ({ formData, setForm, navigation }) => {
                     </ul>
                     <div className={styles.options}>
                         <div>
-                            <IconsPizza name="salsa" value={data.salsa.part} onChange={(part) => { setDataSalsaQueso({ name: "salsa", part: part }) }}  />
+                            <IconsPizza name="salsa" value={data.salsa.part} onChange={(part) => { setDataSalsaQueso({ name: "salsa", part: part }) }} />
                         </div>
                         <div>
                             <Check id={1} value={data.salsa.extra} onChange={(e) => { setDataSalsaQueso({ name: "salsa", extra: e.target.checked }) }} />
@@ -45,7 +45,6 @@ const SalsaQuesoStep = ({ formData, setForm, navigation }) => {
                     <h4>QUESO</h4><br />
                     <ul>
                         <li className={styles.li}>Queso 100% Mozarella</li><br />
-
                     </ul>
                     <div className={styles.options}>
                         <div>

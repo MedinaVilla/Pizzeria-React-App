@@ -21,13 +21,21 @@ const ItemToAdd = ({ item }) => {
         const pizza = {
             id: item.id,
             name: item.name,
-            description: item.description,
-            ingredients: item.ingredients,
+            // description: item.description,
+            // ingredients: item.ingredients,
             image: "http://localhost:3000/static/media/pizza1.d147f49c.png",
             masa: masaSelected,
             size: sizeSelected,
-            mitadIzquierda: mitadIzqSelected,
-            mitadDerecha: mitadDerSelected,
+            salsaQueso: {
+                salsa: {
+                    part: 1, extra: false
+                },
+                queso: {
+                    part: 1, extra: false
+                }
+            },
+            mitadIzquierda: [{ingredient: mitadIzqSelected, extra:false}],
+            mitadDerecha: [{ingredient: mitadDerSelected, extra:false}],
             quantity: quantity,
             price: Math.floor(Math.random() * 600) + 1
         }

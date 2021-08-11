@@ -34,8 +34,18 @@ const GridAdicionales = ({ items }) => {
         let sameArticleCart = storage.findIndex((element) => (element.id === item.id && element.name === item.name));
         if (sameArticleCart > 0) {
             let quantityActual = parseInt(storage[sameArticleCart].quantity);
-            storage[sameArticleCart].quantity = quantityActual + (quantity - quantityActual);
-            Swal.fire('Quitado del carrito', 'Puedes continuar agregando productos', 'success');
+            let quantityNuevo = quantityActual + (quantity - quantityActual)
+            if (quantityNuevo === 0) {
+                let sameArticleCart = storage.findIndex((element) => (element.id === item.id));
+                if (sameArticleCart !== -1) {
+                    storage.splice(sameArticleCart, 1);
+                    localStorage.setItem("cart", JSON.stringify(storage));
+                    Swal.fire('Producto quitado del carrito', 'Puedes continuar agregando productos', 'success');
+                } else console.log("ERROR")
+            } else {
+                storage[sameArticleCart].quantity = quantityActual + (quantity - quantityActual);
+                Swal.fire('Cantidad modificada en el carrito', 'Puedes continuar agregando productos', 'success');
+            }
         } else {
             storage.push(adicional);
             Swal.fire('Agregado al carrito', 'Puedes continuar agregando productos', 'success');

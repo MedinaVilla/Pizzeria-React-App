@@ -8,7 +8,6 @@ const notifyDeleteElementCart = () => toast.success('El producto se ha eliminado
 const notifyEmptyCart = () => toast.success('Tu carrito se ha vaciado extisoamente');
 
 const Cart = () => {
-    
     //Cart from localStorage. Meanwhile find a mechanism to control Global State
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : []);
     const [total] = useState(974);
@@ -40,8 +39,37 @@ const Cart = () => {
                 setCart([]);
                 localStorage.removeItem("cart");
                 notifyEmptyCart();
-            } 
+            }
         })
+    }
+
+    const getBasePizza = (base, mitad) => {
+        let baseMitad ="";
+        if (base.salsa.part !== mitad) {
+            baseMitad = baseMitad + "Salsa";
+            if (base.salsa.extra === true) {
+                baseMitad = baseMitad + " Extra"
+            }
+        }
+        if (base.queso.part !== mitad) {
+            baseMitad = baseMitad + " Queso"
+            if (base.queso.extra === true) {
+                baseMitad = baseMitad + " Extra"
+            }
+        }
+        return baseMitad;
+    }
+
+    const renderItemPizza = (item) => {
+        let mitadIzquierda = ",";
+        let mitadDerecha = ",";
+        let baseIzquierda = getBasePizza(item.salsaQueso,2);
+        let baseDerecha = getBasePizza(item.salsaQueso,0);
+       
+        mitadIzquierda = item.mitadIzquierda.map((e) => { let extra = e.extra === true ? " extra" : ""; return e.ingredient + "" + extra + " " });
+        mitadDerecha = mitadDerecha + item.mitadDerecha.map((e) => { let extra = e.extra === true ? " extra" : ""; return e.ingredient + "" + extra + " " });
+        return <strong>{item.size} {mitadIzquierda},{item.masa}, {baseIzquierda} /{item.size} {mitadDerecha},{item.masa} {baseDerecha}</strong>;
+
     }
 
     return (
@@ -71,7 +99,7 @@ const Cart = () => {
                             <img style={{ width: "100%" }} src={item.image} alt={`images-${index}`}></img>
                         </div>
                         <div className={styles.col_md_6}>
-                            {item.presentation ? <><p><strong>{item.name} {item.presentation}</strong></p><p>{item.description}</p></> : <strong>{item.size},{item.mitadIzquierda},{item.masa}/{item.mitadDerecha} {item.size},{item.masa}</strong>}
+                            {item.presentation ? <><p><strong>{item.name} {item.presentation}</strong></p><p>{item.description}</p></> : renderItemPizza(item)}
                         </div>
                         <div className={styles.col_md_2}>
                             <p>{item.quantity}</p>

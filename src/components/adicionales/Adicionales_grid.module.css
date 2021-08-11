@@ -28,11 +28,12 @@
 }
 .inputNumber{
    border: 0.5px solid #cecece;
-   width: 50px;
+   width: 40px;
+   padding-left: 10px;
    height: 40px;
  }
  .inputNumber:focus{
    outline: none;
-   width: 50px;
+   width: 40px;
    height: 40px;
  }
