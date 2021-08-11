@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ArmaPizza.module.css';
 import { useForm, useStep } from "react-hooks-helper";
 import SizeMasaStep from './steps/size_masa_step/SizeMasaStep';
 import SalsaQuesoStep from './steps/salsa_queso_step/SalsaQuesoStep';
 import Ingredientes from './steps/ingredientes/IngredientesStep';
 
-const defaultData = {
-    firstName: ""
-};
+const ingredientesCount = 17;
 
 const steps = ["TAMAÑO Y MASA", "SALSA Y QUESO", "INGREDIENTES"];
 
 const ArmaPizza = () => {
+    const [defaultData] = useState({
+        masaR: "",
+        sizeR: "",
+        salsa: {
+            part: 1, // 1 Default Total Pizza
+            extra: false
+        },
+        queso: {
+            part: 1,
+            extra: false
+        },
+    });
+
+    useEffect(() => {
+        //Initializing default parameters to ingredients selectes
+        for (let i = 0; i < ingredientesCount; i++) {
+            defaultData["ingredient-" + i] = { selected: false, part: 0, extra: false }; // Part 0 = Ambas mitadas, Part 1 = Mitad izquierda, Part 2 = Mitad derecha
+        }
+    }, [defaultData])
+
     const [formData, setForm] = useForm(defaultData);
     const { step, navigation } = useStep({
         steps,
@@ -38,7 +56,7 @@ const ArmaPizza = () => {
                     {
                         steps.map((s, index) => {
                             return <div key={`item-${index}`} className={styles.section_flex}>
-                                <button className={step === s ? styles.button_active : styles.arr}>TAMAÑO Y MASA</button>
+                                <button className={step === s ? styles.button_active : styles.arr}>{s}</button>
                             </div>
                         })
                     }

@@ -1,13 +1,24 @@
 import React from 'react';
 import pizza from './../../../../assets/images/pizza1.png'
-import leftG from './../../../../assets/images/leftG.png';
-import centerG from './../../../../assets/images/centerG.png';
-import rightG from './../../../../assets/images/rightG.png';
 
 import styles from './SalsaQuesoStep.module.css';
 import Check from '../../../../components/buttons/check/Check';
+import IconsPizza from '../../../../components/pizza_icons/Icons';
 
 const SalsaQuesoStep = ({ formData, setForm, navigation }) => {
+    const data = formData;
+
+    const setDataSalsaQueso = ({ name, part = data[name].part, extra = data[name].extra }) => {
+        setForm({
+            target: {
+                name: name,
+                value: { part: part, extra: extra },
+                type: "radio",
+                checked: extra,
+            }
+        })
+    }
+
     return (
         <>
             <div className={styles.wrapper_flex}>
@@ -23,12 +34,10 @@ const SalsaQuesoStep = ({ formData, setForm, navigation }) => {
                     </ul>
                     <div className={styles.options}>
                         <div>
-                            <img src={leftG} style={{ width: "30px", marginRight: "10px" }} alt="icon" />
-                            <img src={centerG} style={{ width: "30px", marginRight: "10px" }} alt="icon" />
-                            <img src={rightG} style={{ width: "30px", marginRight: "10px" }} alt="icon" />
+                            <IconsPizza name="salsa" value={data.salsa.part} onChange={(part) => { setDataSalsaQueso({ name: "salsa", part: part }) }}  />
                         </div>
                         <div>
-                            <Check id={1} />
+                            <Check id={1} value={data.salsa.extra} onChange={(e) => { setDataSalsaQueso({ name: "salsa", extra: e.target.checked }) }} />
                         </div>
                     </div>
                 </div>
@@ -40,12 +49,10 @@ const SalsaQuesoStep = ({ formData, setForm, navigation }) => {
                     </ul>
                     <div className={styles.options}>
                         <div>
-                            <img src={leftG} style={{ width: "30px", marginRight: "10px" }} alt="icon" />
-                            <img src={centerG} style={{ width: "30px", marginRight: "10px" }} alt="icon" />
-                            <img src={rightG} style={{ width: "30px", marginRight: "10px" }} alt="icon" />
+                            <IconsPizza name="queso" value={data.queso.part} onChange={(part) => { setDataSalsaQueso({ name: "queso", part: part }) }} />
                         </div>
                         <div>
-                            <Check id={2} />
+                            <Check id={2} value={data.queso.extra} onChange={(e) => { setDataSalsaQueso({ name: "queso", extra: e.target.checked }) }} />
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import pizza from './../../../../assets/images/pizza1.png'
 import styles from './SizeMasaStep.module.css';
 
 const SizeMasaStep = ({ formData, setForm, navigation }) => {
-    // const { firstName, lastName, nickName } = formData;
+    const { masaR, sizeR } = formData;
     const [masasCatalog] = useState(["Original", "Orilla rellena de queso", "Pizza de sartén", "Crunchy"]);
     const [masasDescriptions] = useState(["Masa fresca hecha a mano al momento.", "Masa fresca hecha a mano con orilla rellena de queso 100% mozzarella.", "Masa dorada horneada en sartén, doble capa de queso con ingredientes hasta la orilla.", "Masa delgada y crujiente estilo Italiano."])
     const [sizeCatalog] = useState(["Dominator", "Grande", "Mediana"])
@@ -22,7 +22,7 @@ const SizeMasaStep = ({ formData, setForm, navigation }) => {
                     <ul>
                         {
                             masasCatalog.map((masa, index) => {
-                                return <li key={`item-${index}`} className={styles.li}><input name="masa" id={`option-${index}`} type="radio" value={masa} /> <label htmlFor={`menu-${index}`}><strong></strong>{masa}</label><br />
+                                return <li key={`item-${index}`} className={styles.li}><input name="masaR" checked={masaR === masa} onChange={setForm} id={`option-${index}`} type="radio" value={masa} /> <label htmlFor={`menu-${index}`}><strong></strong>{masa}</label><br />
                                     <small>{masasDescriptions[index]}</small>
                                 </li>
                             })
@@ -34,7 +34,7 @@ const SizeMasaStep = ({ formData, setForm, navigation }) => {
                     <ul>
                         {
                             sizeCatalog.map((size, index) => {
-                                return <li key={`item-${index}`} className={styles.li}><input name="size" id={`option-${index}`} type="radio" value={size} /> <label htmlFor={`menu-${index}`}>{size}</label><br />
+                                return <li key={`item-${index}`} className={styles.li}><input name="sizeR" checked={sizeR === size} onChange={setForm} id={`option-${index}`} type="radio" value={size} /> <label htmlFor={`menu-${index}`}>{size}</label><br />
                                     <small>{sizeDescriptions[index]}</small>
                                 </li>
                             })

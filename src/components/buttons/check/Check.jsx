@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Check.module.css';
 
-const Check = ({id}) => {
+const Check = ({ id, value, onChange }) => {
     return (
         <ul className={styles.switches}>
             <li>
-                <input type="checkbox" id={id} />
+                <input onChange={onChange} type="checkbox" id={id} defaultChecked={value === true} value={value} />
                 <label htmlFor={id}>
                     <span>Extra</span>
                     <span></span>
@@ -15,4 +15,4 @@ const Check = ({id}) => {
     );
 }
 
-export default Check;
+export default React.memo(Check);
