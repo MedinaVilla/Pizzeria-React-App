@@ -9,9 +9,10 @@ const MenuCart = lazy(() => import('./pages/menu_cart/MenuCart'));
 const NotFound = lazy(() => import('./pages/not_found/not_found'));
 const MenuPizzas = lazy(() => import('./pages/menu/menu_pizzas'));
 const Promociones = lazy(() => import('./pages/promociones/promociones'));
-const Adicionales =  lazy(() => import('./pages/adicionales/adicionales'));
-const ArmaTuPizza =  lazy(() => import('./pages/arma_pizza/ArmaPizza'));
-const Cart = lazy(()=> import('./pages/cart/Cart'));
+const Adicionales = lazy(() => import('./pages/adicionales/adicionales'));
+const ArmaTuPizza = lazy(() => import('./pages/arma_pizza/ArmaPizza'));
+const LogIn = lazy(() => import('./pages/login/Login'));
+const Cart = lazy(() => import('./pages/cart/Cart'));
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/menu/promociones' component={Promociones} />
           <Route path='/menu/adicionales' component={Adicionales} />
           <Route path='/menu/arma_tu_pizza' component={ArmaTuPizza} />
+          <Route path='/login' component={LogIn} />
           <Route path='/404' component={NotFound} />
           <Redirect to='/404' />
         </Switch>

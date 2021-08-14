@@ -1,0 +1,94 @@
+.container {
+     padding: 0px 22%;
+}
+.wrapper{
+    text-align: center;
+    font-weight: bolder;
+}
+
+.title{
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    color: #006491;
+}
+.subtitle{
+    color: rgb(106, 106, 106);
+    font-size: 13px;
+    padding: 20px;
+}
+.btnLoginFacebook {
+    display: flex;
+    justify-content: center;
+    color: white;
+    border-radius: 4px;
+    background-color: #3b5998;
+    font-size: 20px;
+    padding: 8px;
+}
+.form{
+    text-align: left !important;
+}
+.form label{
+    color: #006491;
+}
+
+.form input{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    height: 30px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px 0 gray;
+    background-color: white;
+    border: none;
+    font-size: 13px;
+    padding: 20px;
+    color: #5c6873;
+}
+.form input:focus{
+    outline: none;
+}
+.btn_primary {
+    border-radius: 4px;
+    background-color: #e31837;
+    font-size: 21px;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+.btn_primary:hover{
+    cursor: pointer;
+    background-color: #a00920;
+    color: white;
+}
+.btn_secondary{
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    border: solid 2px #e31837;
+    background-color: white;
+    font-size: 21px;
+    text-align: center;
+    color: #e31837;
+    padding: 10px;
+}
+.btn_secondary:hover{
+    background-color: #f7f7f7;
+}
+.href{
+    color: rgb(14, 127, 176);
+    font-size: 13px;
+    font-weight: bold;
+}
+.error_message{
+    margin-top: -10px; 
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #e3342f
+}

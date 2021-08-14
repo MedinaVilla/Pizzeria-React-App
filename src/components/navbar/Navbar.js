@@ -22,7 +22,7 @@ const Navbar = () => {
                     <li><Link href="/carrito"><img src={item5} alt="logo" /><br />Mi orden</Link></li>
                 </ul>
             </nav>
-            <Link href="#"><button className={styles.button}>Iniciar Sesión</button></Link>
+            <Link href="/login"><button className={styles.button}>Iniciar Sesión</button></Link>
         </header>
     );
 }
