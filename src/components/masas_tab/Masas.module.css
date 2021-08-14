@@ -5,6 +5,8 @@
 .tabs{
     display: flex;
     flex-direction: row;
+    flex-shrink: 0;
+    justify-content: center;
 }
 .tab{
     background-color: white;
@@ -27,4 +29,12 @@
     background-color: rgb(142, 141, 141);
     padding: 10px;
     color: rgb(255, 255, 255);
+}
+
+@media (max-width:1000px) {
+    .tabs{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }

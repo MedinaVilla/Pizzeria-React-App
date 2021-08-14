@@ -12,14 +12,16 @@ import { Link } from 'wouter';
 const Navbar = () => {
     return (
         <header className={styles.nav}>
-            <Link href="/"><img className={styles.logo} src={logo} alt="logo" /></Link>
+            <div>
+                <Link href="/"><img className={styles.logo} src={logo} alt="logo" /></Link>
+            </div>
             <nav>
                 <ul className={styles.nav_links}>
-                    <li><Link href="/menu/pizzas"><img src={item1} alt="logo" /><br />Pizzas</Link></li>
-                    <li><Link href="/menu/arma_tu_pizza"><img src={item2} alt="logo" /><br />Arma tu pizza</Link></li>
-                    <li><Link href="/menu/promociones"><img src={item3} alt="logo" /><br />Promociones</Link></li>
-                    <li><Link href="/menu/adicionales"><img src={item4} alt="logo" /><br />Adicionales</Link></li>
-                    <li><Link href="/carrito"><img src={item5} alt="logo" /><br />Mi orden</Link></li>
+                    <Link href="/menu/pizzas"><li><img src={item1} alt="logo" /><div className={styles.item_name}>Pizzas</div></li></Link>
+                    <Link href="/menu/arma_tu_pizza"><li><img src={item2} alt="logo" /><div className={styles.item_name}>Arma tu pizza</div></li></Link>
+                    <Link href="/menu/promociones"><li><img src={item3} alt="logo" /><div className={styles.item_name}>Promociones</div></li></Link>
+                    <Link href="/menu/adicionales"><li><img src={item4} alt="logo" /><div className={styles.item_name}>Adicionales</div></li></Link>
+                    <Link href="/carrito"><li><img src={item5} alt="logo" /><div className={styles.item_name}>Carrito</div></li></Link>
                 </ul>
             </nav>
             <Link href="/login"><button className={styles.button}>Iniciar Sesión</button></Link>

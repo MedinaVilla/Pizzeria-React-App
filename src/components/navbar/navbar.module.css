@@ -24,6 +24,7 @@
    height: 36px;
 }
 .nav_links li{
+    align-items: center;
     transition: all 0.3s ease 0s;
     display: inline-block;
     padding: 0% 20px;
@@ -44,6 +45,63 @@
 
 .logo{
     width: 150px;
+    padding: 10px;
     cursor: pointer;
     margin-right: auto;
+}
+
+@media (max-width:1044px) {
+    .nav{
+        background-color: #006491 ;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px; 
+        padding: 5px 10.5%; 
+    }
+    .nav_links li{
+        transition: all 0.3s ease 0s;
+        display: inline-block;
+        padding: 10px 20px;
+    }
+    .button{
+        padding: 9px 25px;
+        background-color:rgb(187, 7, 7);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        margin-left: 0;
+    }
+}
+@media (max-width:623px) {
+    .nav{
+        background-color: #006491 ;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px; 
+        padding: 5px 10.5%; 
+    }
+    .nav_links ul{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center;
+        transition: all 0.3s ease 0s;
+        display: inline-block;
+        padding: 0% 20px;
+    }
+    .nav_links li{
+        display: flex;
+        transition: all 0.3s ease 0s;
+        padding: 4% 20px;
+    }
+    .nav li img{
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+     }
+
 }

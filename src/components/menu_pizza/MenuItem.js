@@ -8,7 +8,7 @@ const MenuItem = ({ item }) => {
 
     const saveProductToBuy = () => {
         localStorage.setItem("to_buy", JSON.stringify(item));
-        setLocation(`menu/ordenar_especialidad/${item.name}`);
+        setLocation(`/menu/ordenar_especialidad/${item.name}`);
     }
     const showDetailsItem = () => {
         toast((t) => (

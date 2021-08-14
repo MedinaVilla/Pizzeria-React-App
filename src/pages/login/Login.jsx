@@ -10,7 +10,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = () => {
-        alert("yeaih");
+        alert("Login exitoso");
 
     }
     return (
@@ -24,7 +24,7 @@ const Login = () => {
                     <input {...register("username", { required: true })} id="username" name="username" type="text" placeholder={"Ingresa tu correo electrónico"} />
                     {errors.username?.type === 'required' && <p className={styles.error_message}>Ingresa tu correo electrónico</p>}
                     <label htmlFor="username">CONTRASEÑA</label>
-                    <input  {...register("password", { required: true })} id="password" name="password" type="password" placeholder={"Ingresa tu correo electrónico"} />
+                    <input  {...register("password", { required: true })} id="password" name="password" type="password" placeholder={"Ingresa tu contraseña"} />
                     {errors.password?.type === 'required' && <p className={styles.error_message}>Ingresa tu contraseña</p>}
                     <button type="submit" className={styles.btn_primary}>INICIAR SESIÓN</button>
                 </form>

@@ -3,6 +3,8 @@ import { Route, Switch, Redirect } from "wouter";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import "./index.css";
+import LoadPage from './components/loading/LoadPage';
+
 
 const Main = lazy(() => import('./pages/main/main'));
 const MenuCart = lazy(() => import('./pages/menu_cart/MenuCart'));
@@ -13,12 +15,11 @@ const Adicionales = lazy(() => import('./pages/adicionales/adicionales'));
 const ArmaTuPizza = lazy(() => import('./pages/arma_pizza/ArmaPizza'));
 const LogIn = lazy(() => import('./pages/login/Login'));
 const Cart = lazy(() => import('./pages/cart/Cart'));
-
 function App() {
   return (
     <div className='App'>
       <Navbar />
-      <Suspense fallback={<div />}>
+      <Suspense fallback={<LoadPage />}>
         <Switch>
           <Route path='/' component={Main} />
           <Route path='/menu/ordenar_especialidad/:id' component={MenuCart} />
@@ -29,7 +30,7 @@ function App() {
           <Route path='/menu/arma_tu_pizza' component={ArmaTuPizza} />
           <Route path='/login' component={LogIn} />
           <Route path='/404' component={NotFound} />
-          <Redirect to='/404' />
+          {/* <Redirect to='/404' /> */}
         </Switch>
       </Suspense>
       <Footer />
