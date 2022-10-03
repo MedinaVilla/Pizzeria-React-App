@@ -23,6 +23,7 @@ const Adicionales = () => {
         name: "PEPSI",
         description: "Experimenta todo el sabor cola, refrescando y amplificando cada momento.",
         presentation: "1.5 L",
+        price: 35,
         image: bebida1
 
     },
@@ -31,6 +32,8 @@ const Adicionales = () => {
         name: "PEPSI",
         description: "Experimenta todo el sabor cola, refrescando y amplificando cada momento.",
         presentation: "600 ml",
+        price: 20,
+
         image: bebida1
     },
     {
@@ -38,13 +41,16 @@ const Adicionales = () => {
         name: "PEPSI LIGHT",
         description: "Experimenta todo el sabor cola, refrescando y amplificando cada momento.",
         presentation: "600 ml",
+        price: 25,
+
         image: bebida3
     },
     {
         id: "bebida4",
         name: "7 UP",
         description:"Agua, burbujas y los refrescantes sabores naturales de la lima & limón.",
-        presentation: "1.5 L",
+        price: 30,
+
         image: bebida2
     },
     {
@@ -52,14 +58,19 @@ const Adicionales = () => {
         name: "MANZANITA",
         description:"Con un toque de jugo natural de manzana, delicioso aroma y un sabor irresistible.",
         presentation: "1.5 L",
+        price: 30,
+
         image: bebida4
     }
     ]);
+
     const [entradasCatalog] = useState([{
         id: "entrada1",
         name: "CHEESY BREAD",
         description:"Delicioso pan horneado relleno de queso crema y mozzarella, gratinado con queso mozzarella, cheddar y parmesano.",
         presentation: "8 tiras",
+         price: 89,
+
         image: entrada1
 
     },
@@ -68,6 +79,8 @@ const Adicionales = () => {
         name: "CHEESY BREAD CHORIZO JALAPEÑO",
         description:"Delicioso pan hecho a mano y horneado al momento, relleno de queso crema, queso mozzarella, chorizo y rodajas de jalapeño con un toque de finas hierbas. Gratinado con una capa de queso mozzarella, cheddar y parmesano.",
         presentation: "8 tiras",
+        price: 89,
+
         image: entrada2
     },
     {
@@ -75,6 +88,8 @@ const Adicionales = () => {
         name: "ALITAS NATURALES",
         description:"Deliciosas y horneadas con gran sabor al natural",
         presentation: "230 g",
+        price: 99,
+
         image: entrada3
     },
     {
@@ -82,13 +97,18 @@ const Adicionales = () => {
         name: "ALITAS CAYENNE",
         description:"Salsa picosita con un toque de diferentes chiles",
         presentation: "230 g",
+        price: 99,
+
         image: entrada4
     }]);
+
     const [postreCatalog] = useState([{
         id: "postre1",
         name: "CANELA BAITZ",
         description:"Bocados horneados, espolvoreados con canela y azúcar acompañados con un dip sabor cappuccino.",
         presentation: "16 piezas",
+        price: 99,
+
         image: postre1
 
     },{
@@ -96,6 +116,8 @@ const Adicionales = () => {
         name: "CAJETA BAITZ",
         description:"Deliciosos panecitos cubiertos con cajeta y glass",
         presentation: "16 piezas",
+        price: 99,
+        
         image: postre2
     }]);
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import { Link } from 'wouter';
@@ -10,7 +10,22 @@ const notifyEmptyCart = () => toast.success('Tu carrito se ha vaciado extisoamen
 const Cart = () => {
     //Cart from localStorage. Meanwhile find a mechanism to control Global State
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : []);
-    const [total] = useState(974);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        if (cart.length === 0) {
+            setTotal(0);
+        } else if (cart.length === 1) {
+            setTotal(cart[0].price)
+        } else if (cart.length > 1) {
+            const priceTotal = cart.reduce((previousValue, currentValue) => {
+                let price = currentValue.price * currentValue.quantity;
+                return previousValue + price;
+            }, 0)
+            setTotal(priceTotal);
+        }
+
+    }, [cart]);
 
     const deleteFromCart = (id) => {
         setCart(cart.filter(function (item) { return item.id !== id }));
@@ -44,7 +59,7 @@ const Cart = () => {
     }
 
     const getBasePizza = (base, mitad) => {
-        let baseMitad ="";
+        let baseMitad = "";
         if (base.salsa.part !== mitad) {
             baseMitad = baseMitad + "Salsa";
             if (base.salsa.extra === true) {
@@ -63,9 +78,9 @@ const Cart = () => {
     const renderItemPizza = (item) => {
         let mitadIzquierda = ",";
         let mitadDerecha = ",";
-        let baseIzquierda = getBasePizza(item.salsaQueso,2);
-        let baseDerecha = getBasePizza(item.salsaQueso,0);
-       
+        let baseIzquierda = getBasePizza(item.salsaQueso, 2);
+        let baseDerecha = getBasePizza(item.salsaQueso, 0);
+
         mitadIzquierda = item.mitadIzquierda.map((e) => { let extra = e.extra === true ? " extra" : ""; return e.ingredient + "" + extra + " " });
         mitadDerecha = mitadDerecha + item.mitadDerecha.map((e) => { let extra = e.extra === true ? " extra" : ""; return e.ingredient + "" + extra + " " });
         return <strong>{item.size} {mitadIzquierda},{item.masa}, {baseIzquierda} /{item.size} {mitadDerecha},{item.masa} {baseDerecha}</strong>;
@@ -99,7 +114,7 @@ const Cart = () => {
                             <img style={{ width: "100%" }} src={item.image} alt={`images-${index}`}></img>
                         </div>
                         <div className={styles.col_md_6}>
-                            {item.presentation ? <><p><strong>{item.name} {item.presentation}</strong></p><p>{item.description}</p></> : renderItemPizza(item)}
+                            {item.description ? <><p><strong>{item.name} {item.presentation}</strong></p><p>{item.description}</p></> : renderItemPizza(item)}
                         </div>
                         <div className={styles.col_md_2}>
                             <p>{item.quantity}</p>
@@ -121,7 +136,13 @@ const Cart = () => {
                 <div className={styles.button_group}>
                     <button onClick={() => { setCartEmpty() }}>Vaciar Carrito</button>
                     <Link href="/"><button>Seguir comprando</button></Link>
-                    <button>Pagar</button>
+                    <button onClick={() => {
+                        Swal.fire({
+                            title: '¡Tu orden ha sido pedido exitosamente!',
+                            text: 'Puedes hacer un seguimiento de tu pedido en el Dominos Tracker.',
+                            icon: 'success',
+                        })
+                    }} disabled={total === 0 ? true : false}>Pagar</button>
                 </div>
             </div>
             <Toaster

@@ -90,6 +90,9 @@
 .button_group button:nth-child(3){
 	background-color: #2ea761;
 }
+.button_group button:nth-child(3):disabled{
+	opacity: 0.5;
+}
 
 @media (min-width:768px) {
     .container{

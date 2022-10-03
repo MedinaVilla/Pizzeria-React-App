@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import "./index.css";
 import LoadPage from './components/loading/LoadPage';
+import ScrollToTop from "./hooks/scrollToTop";
 
 
 const Main = lazy(() => import('./pages/main/main'));
@@ -18,6 +19,7 @@ const Cart = lazy(() => import('./pages/cart/Cart'));
 function App() {
   return (
     <div className='App'>
+        <ScrollToTop />
       <Navbar />
       <Suspense fallback={<LoadPage />}>
         <Switch>

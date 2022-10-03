@@ -40,5 +40,9 @@
     font-size: 14px;
     border-radius: 3px;
     color: white;
+}
 
+.search_cupon button:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
